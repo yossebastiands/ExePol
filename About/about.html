@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | LEO Officer Hub</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: url('../../Home-BG.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: -1;
+    }
+    .about-container {
+      max-width: 900px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+    }
+    .about-container h1 {
+      color: #00ccff;
+      text-shadow: 0 0 10px #00ccff;
+      margin-bottom: 15px;
+    }
+    .about-container p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .about-container strong {
+      color: #00ccff;
+    }
+    .ooc-section {
+      margin-top: 20px;
+      padding: 15px;
+      border-top: 1px solid rgba(0, 170, 255, 0.4);
+    }
+    .ooc-section h3 {
+      color: #ff3333;
+      margin-bottom: 10px;
+    }
+    .ooc-section p {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .ooc-section a {
+      color: #00ccff;
+      text-decoration: underline;
+    }
+    .donation-links img {
+      width: 40px;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .donation-links img:hover {
+      transform: scale(1.2);
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #a9bcd0;
+    }
+    .back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 18px;
+    background: rgba(0, 170, 255, 0.15);
+    border: 2px solid #00aaff;
+    color: #00ccff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 0.95rem;
+    }
+
+    .back-btn:hover {
+    background: #00aaff;
+    color: #0d1117;
+    box-shadow: 0 0 15px #00ccff, 0 0 30px #0099cc;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="about-container">
+    <a href="../../home.html" class="back-btn">← Back to Home</a>
+    <h1>About LEO Officer Hub</h1>
+    <p>This site is dedicated for the Law Enforcement Officers of the Executive Roleplay community. It serves as a centralized hub for all LEO-related resources, guides, and services.</p>
+    <p>This site is maintained and developed by <strong>Berlin Heisenberg</strong>, along with his associates for maintaining other subsites.</p>
+
+    <div class="ooc-section">
+      <h3>Out of Character</h3>
+      <p>If you want to support this project by donating or need automation/web development services, you can contact:</p>
+      <p><a href="mailto:yossebastian.epinet@gmail.com">yossebastian.epinet@gmail.com</a></p>
+      <p><em>I will provide custom domain and full forum features if I receive funding.</em></p>
+
+      <div class="donation-links">
+        <a href="#"><img src="../../assets/donate1.png" alt="Donate"></a>
+        <a href="#"><img src="../../assets/donate2.png" alt="Donate"></a>
+        <a href="#"><img src="../../assets/paypal.png" alt="PayPal"></a>
+        <a href="#"><img src="../../assets/patreon.png" alt="Patreon"></a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Powered by Berlin Heisenberg | &copy; 2025 Executive RP
+  </footer>
+</body>
+</html>
