@@ -6,11 +6,18 @@
 }
 
 body {
-  font-family: 'Orbitron', sans-serif;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f1f1f1;
   background: url('Home-BG.jpg') no-repeat center center/cover;
   min-height: 100vh;
 }
+
+h1, h2, h3, .sidebar-title, header {
+  font-family: 'Orbitron', sans-serif;
+}
+
 
 /* Background overlay for blur effect */
 .overlay {
@@ -82,7 +89,8 @@ header {
   color: #00ccff;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
   text-shadow: 0 0 10px #00ccff;
 }
 
@@ -103,6 +111,7 @@ header {
   text-decoration: none;
   border-radius: 8px;
   font-size: 1rem;
+  letter-spacing: 0.5px;
   font-family: inherit;
   transition: background 0.3s, color 0.3s;
   background: none;
@@ -111,11 +120,12 @@ header {
   text-align: left;
 }
 
-.menu a:hover,
-.dropdown-btn:hover {
-  background: rgba(0, 170, 255, 0.2);
-  color: #00ccff;
+.menu a:hover, .dropdown-btn:hover {
+  background: rgba(0, 170, 255, 0.25);
+  color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
 }
+
 
 /* Dropdown content */
 .dropdown-content {
@@ -164,19 +174,21 @@ header {
   margin-bottom: 20px;
 }
 
-.hero-card h2,
-.nda-card h3,
-.ooc-card h3 {
-  color: #00ccff;
-  margin-bottom: 10px;
-  text-shadow: 0 0 8px #00ccff;
+
+.hero-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
-.hero-card p,
-.nda-card p,
-.ooc-card p {
+.nda-card h3, .ooc-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.hero-card p, .nda-card p, .ooc-card p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  max-width: 700px;
 }
 
 .ooc-card .link {
@@ -219,6 +231,8 @@ header {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
