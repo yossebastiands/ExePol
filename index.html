@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>ExePol</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h2 class="sidebar-title">Officer Hub</h2>
+    <ul class="menu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="Subsites/Announcement/announcement.html">Announcements</a></li>
+
+      <li><a href="Subsites/Guide/guide.html">Guides</a></li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Dashboard</button>
+        <ul class="dropdown-content">
+          <li><a href="Subsites/Dashboard/handbook.html">Handbook</a></li>
+          <li><a href="Subsites/Dashboard/CaA.html">Callsigns and Authorities</a></li>
+          <li><a href="Subsites/Dashboard/vehicle.html">Vehicle Dashboard</a></li>
+          <li><a href="Subsites/Dashboard/roster.html">Roster Dashboard</a></li>
+          <li><a href="Subsites/Dashboard/case.html">Case Dashboard</a></li>
+          <li><a href="Subsites/Dashboard/operation.html">Operation Dashboard</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Departments</button>
+        <ul class="dropdown-content">
+          <li><a href="Subsites/Departments/LSPD.html">LSPD</a></li>
+          <li><a href="Subsites/Departments/LSCS.html">LSCS</a></li>
+          <li><a href="Subsites/Departments/SASPR.html">SASPR</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Services</button>
+        <ul class="dropdown-content">
+          <li><a href="Subsites/Services/reimburse.html">Reimburse Service</a></li>
+          <li><a href="Subsites/Services/impound.html">Report Impound Status</a></li>
+          <li><a href="Subsites/Services/transfer.html">Transfer Request</a></li>
+          <li><a href="Subsites/Services/reinstate.html">Reinstate Request</a></li>
+          <li><a href="Subsites/Services/internal.html">Reporting an Internal Case</a></li>
+          <li><a href="Subsites/Services/absence.html">Notifying Absence</a></li>
+          <li><a href="Subsites/Services/register.html">Register To Database</a></li>
+          <li><a href="Subsites/Services/mailing.html">Register To Mailing System</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Divisions</button>
+        <ul class="dropdown-content">
+          <li><a href="Subsites/Divisions/speedunit.html">Speed Unit</a></li>
+          <li><a href="Subsites/Divisions/airunit.html">Air Unit</a></li>
+          <li><a href="Subsites/Divisions/specops.html">SpecOps Unit</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropdown-btn">Forums</button>
+        <ul class="dropdown-content">
+          <li><a href="Subsites/Forums/publicboard.html">Tabula Aperta</a></li>
+          <li><a href="Subsites/Forums/updatetracker.html">Update Tracker</a></li>
+        </ul>
+      </li>
+
+      <li><a href="Subsites/Contact/contact.html">Recruitment</a></li>
+
+      <li><a href="Subsites/Contact/contact.html">Contact</a></li>
+      <li><a href="Subsites/About/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-container">
+    <header>
+      <button class="sidebar-toggle" id="sidebarToggle">&#9776;</button>
+      <h1>LEO Officer Hub</h1>
+    </header>
+
+    <main class="main-grid">
+      <!-- LEFT TEXT + RIGHT BUTTONS stays same as before -->
+      <section class="left-column">
+        <div class="hero-card">
+          <h2>Welcome to the LEO Officer Hub</h2>
+          <p>The LEO Officer Hub is your centralized platform for all official resources, tools, and updates related to Law Enforcement Operations. Designed exclusively for LEO officers, this hub provides streamlined access to critical documents, unit assignments, internal communications, training materials, and operational protocols. Whether you're in the field or at your desk, the Officer Hub ensures you stay informed, organized, and connected. Your duty starts here—efficient, secure, and mission-ready. </p>
+        </div>
+        <div class="nda-card">
+          <h3>NON-DISCLOSURE AGREEMENT</h3>
+          <p>This website is strictly intended for use by authorized LEO members only. Unauthorized access, usage, or distribution of any content is strictly prohibited and may result in disciplinary or legal action.
+
+Access to specific files and assets is limited based on individual member roles and assignments. Not all content is available to all users. Each member is granted access only to the areas and resources necessary to fulfill their responsibilities.</p>
+        </div>
+        <div class="ooc-card">
+          <h3>Out of Character Notice</h3>
+          <p>This site is in context of roleplaying in a video game called Grand Theft Auto. This site particularly support the Executive Roleplay Community.
+
+If you need my service, please refer to the "ABOUT" page</p>
+        </div>
+      </section>
+
+      <section class="right-column">
+        <div class="button-panel">
+          <h3>Quick Navigation</h3>
+          <div class="button-grid">
+            <a href="#" class="btn">Handbook</a>
+            <a href="#" class="btn">Recruitment</a>
+            <a href="#" class="btn">Roster Dashboard</a>
+            <a href="#" class="btn">Register To Database</a>
+            <a href="#" class="btn">About</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 Executive RP | Law Enforcement Division
+    </footer>
+  </div>
+
+<!-- Music Player -->
+<div class="music-player">
+  <audio id="audioPlayer" src="assets/music.mp3"></audio>
+  <span id="songTitle">Now Playing: music</span>
+  <button id="playPauseBtn">▶</button>
+  <button id="resetBtn">⟲</button>
+  <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+</div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
