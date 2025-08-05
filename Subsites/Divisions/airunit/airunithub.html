@@ -4,19 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
-  <title>SpecOps Hub</title>
+  <title>ExePol | Air Unit</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style-specops.css" />
+  <link rel="stylesheet" href="style-airunit.css" />
 </head>
 <body>
   <div class="overlay"></div>
 
   <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="sidebar-title">SPECOPS HUB</div>
+    <div class="sidebar-title">AIR UNIT HUB</div>
     <ul class="menu">
       <li><a href="../../../index.html">Back To Home</a></li>
-
+      <li>
+        <button class="dropdown-btn">Dashboard</button>
+        <ul class="dropdown-content">
+          <li><a href="#">Roster</a></li>
+          <li><a href="#">Fleets</a></li>
+          <li><a href="#">Aerial Laws and Penal Codes</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="dropdown-btn">Certificates</button>
+        <ul class="dropdown-content">
+          <li><a href="#">Apply For Certificate</a></li>
+          <li><a href="#">Certificate Types</a></li>
+          <li><a href="#">Certificate Guide</a></li>
+        </ul>
+      </li>
       <li>
         <button class="dropdown-btn">Intelligence</button>
         <ul class="dropdown-content">
@@ -29,17 +44,10 @@
           <li><a href="https://script.google.com/macros/s/AKfycbyq5253twhedAfN2eYe-wRr7cn_K2zKaEqJKVWOl_0UN0cQDfRVRhuCFjWahc6s-SHq/exec" target="_blank">Case Directory</a></li>
         </ul>
       </li>
-      <li>
-        <button class="dropdown-btn">SWAT</button>
-        <ul class="dropdown-content">
-          <li><a href="#">Information Center</a></li>
-          <li><a href="#">SWAT Roster</a></li>
-          <li><a href="#">Apply To Join</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Vehicle Management</a></li>
+      <li><a href="#">Code Of Conduct Agreement</a></li>
+      <li><a href="#">Los Santos Aviation Academy</a></li>
       <li><a href="https://script.google.com/macros/s/AKfycbx5FbeCnb_jlukiGpbn8kt-e3rnJQCOqju6ldYAT1k4GZPv8y3sCcYsYALJL-koskR0/exec" target="_blank">Reimburse Service</a></li>
-      <li><a href="specopsmanagement.html">SpecOps Management</a></li>
+      <li><a href="airunitmanagement.html">Air Unit Management</a></li>
     </ul>
   </aside>
 
@@ -47,7 +55,7 @@
   <div class="main-container">
     <header>
       <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-      SpecOps Hub
+      Air Unit Hub
     </header>
 
     <div class="main-grid">
@@ -55,8 +63,8 @@
       <div>
         <!-- Hero Card -->
         <div class="hero-card">
-          <h2>Welcome to LEO SpecOps Hub</h2>
-          <p>A site dedicated for SpecOps units in LEO.</p>
+          <h2>Welcome to LEO Air Unit Hub</h2>
+          <p>This is the site related to any air unit matter in the Law Enforcement. Can be used both by certified officers or non certified officers.</p>
           <p>You may enter the following site if you are looking for a site for regular officers.</p>
           <a href="../../../index.html" class="btn">LEO Officer Hub</a>
         </div>
@@ -64,7 +72,7 @@
         <!-- NDA Card -->
         <div class="nda-card">
           <h3>Non-Disclosure Agreement</h3>
-          <p>This website is strictly intended for use for SpecOps only. Unauthorized access, usage, or distribution of any content is strictly prohibited and may result in disciplinary or legal action.</p>
+          <p>This website is strictly intended for use by authorized LEO members only. Unauthorized access, usage, or distribution of any content is strictly prohibited and may result in disciplinary or legal action.</p>
           <p>Access to specific files and assets is limited based on individual administrator roles and assignments. Not all content is available to all users. Each administrator is granted access only to the areas and resources necessary to fulfill their responsibilities.</p>
         </div>
 
@@ -91,6 +99,6 @@
 
   <footer>2025 Apollo Flight Program | ExePol</footer>
 
-  <script src="script-specops.js"></script>
+  <script src="script-airunit.js"></script>
 </body>
 </html>
