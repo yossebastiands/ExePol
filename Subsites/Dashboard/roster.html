@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExePol | Roster</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Orbitron', sans-serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 80px 20px 20px; /* top padding for fixed header */
+  background: url('Roster-BG.jpg') no-repeat center center / cover;
+  min-height: 100vh;
+  position: relative;
+}
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 17, 23, 0.7); /* Slight dark overlay */
+  backdrop-filter: blur(4px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card .info > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* ✅ force full width so status tag goes to far right */
+}
+
+.card .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background: transparent; /* ✅ Transparent background */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.3rem;
+  color: #00ccff;
+  text-shadow: 0 0 10px #00ccff;
+  box-shadow: none; /* ✅ Remove shadow */
+  z-index: 100;
+}
+
+header button {
+  background: rgba(0,170,255,0.1);
+  border: 2px solid #00aaff;
+  color: #00ccff;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+header button:hover {
+  background: #00aaff;
+  color: #0d1117;
+}
+/* Make filter box look like cards */
+.controls-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 15px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,170,255,0.2);
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.controls-panel input,
+.controls-panel select,
+.controls-panel button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #00ccff;
+  background: rgba(13,17,23,0.9);
+  color: #fff;
+}
+.controls-panel button {
+  background: rgba(0,170,255,0.1);
+  border: 2px solid #00aaff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.controls-panel button:hover {
+  background: #00aaff;
+  color: #0d1117;
+}
+#cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Wrap everything in a centered container */
+.container {
+  max-width: 900px; /* narrower layout */
+  margin: 0 auto;   /* center it */
+  padding: 0 15px;  /* small side padding for mobile */
+}
+
+.card {
+  padding: 18px;
+  border-radius: 12px;
+  display: flex;
+  gap: 15px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 15px rgba(0,170,255,0.2);
+  align-items: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  margin-bottom: 14px;
+  max-width: 100%; /* Ensure it doesn’t stretch full page */
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0,255,255,0.4);
+}
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ffff;
+}
+.status-tag {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.status-active { background: rgba(0,255,128,0.2); color:#00ff80; border:1px solid #00ff80; }
+.status-inactive { background: rgba(255,255,0,0.2); color:#ffff66; border:1px solid #ffff66; }
+.status-discharged { background: rgba(0,204,255,0.2); color:#00ccff; border:1px solid #00ccff; }
+.status-deceased { background: rgba(255,51,51,0.2); color:#ff3333; border:1px solid #ff3333; }
+
+/* Hover Box (big card) */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9998;
+}
+#hoverBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10,30,40,0.95);
+  padding: 25px;
+  border-radius: 12px;
+  display: none;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 800px;
+  width: 90%;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 25px #00ffff;
+  z-index: 9999;
+}
+#hoverPhoto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #00ffff;
+}
+.hover-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px 16px;
+  font-size: 15px;
+}
+.hover-details .label {
+  color: #00ffff;
+  font-weight: bold;
+  text-align: right;
+}
+.hover-details .value { color:#fff; }
+#hoverIcons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#hoverIcons img { max-height: 28px; }
+</style>
+</head>
+<body>
+<div class="bg-overlay"></div>
+
+<header>
+  <button id="backButton" class="sidebar-toggle">← Back</button>
+  <span>Officer Directory</span>
+</header>
+
+<div class="container">
+<div class="controls-panel">
+  <input type="text" id="searchBox" placeholder="Search name...">
+  <select id="statusFilter">
+    <option value="">All Statuses</option>
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+    <option value="Deceased">Deceased</option>
+    <option value="Discharged">Discharged</option>
+  </select>
+  <select id="departmentFilter">
+    <option value="">All Departments</option>
+    <option value="LSPD">LSPD</option>
+    <option value="LSCS">LSCS</option>
+    <option value="SASPR">SASPR</option>
+    <option value="SAST">SAST</option>
+  </select>
+  <select id="authorityFilter">
+    <option value="">All Authority</option>
+    <option value="Senior High Command">Senior High Command</option>
+    <option value="High Command">High Command</option>
+    <option value="Command">Command</option>
+    <option value="Supervisor">Supervisor</option>
+    <option value="Non Commanding Officer">Non Commanding Officer</option>
+  </select>
+  <button id="sortButton">Sort: Authority</button>
+</div>
+<div id="cardContainer"></div>
+</div>
+
+
+
+<div id="overlay"></div>
+
+<div id="hoverBox">
+  <div id="hoverIcons"></div>
+  <img id="hoverPhoto">
+  <div class="hover-details" id="hoverDetails"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+document.getElementById("backButton").addEventListener("click", () => {
+  window.location.href = "../../index.html";
+});
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBUBjm7hjnwBQe7NkLfWFDvfLo1MuS7Jq4",
+  authDomain: "exepol-95459.firebaseapp.com",
+  databaseURL: "https://exepol-95459-default-rtdb.firebaseio.com",
+  projectId: "exepol-95459",
+  storageBucket: "exepol-95459.firebasestorage.app",
+  messagingSenderId: "538383878714",
+  appId: "1:538383878714:web:fdc2d8f538515537024303"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+let allData = [];
+let currentSortMode = 'authority';
+const authorityOrder = ["Senior High Command","High Command","Command","Supervisor","Non Commanding Officer"];
+
+const getDepartmentColor = dept => ({ SAST:'#ff1a1a', LSPD:'#00bfff', LSCS:'#ffff66', SASPR:'#66ff66' }[dept] || '#888');
+const getStatusClass = status => ({ Active:'status-active', Inactive:'status-inactive', Discharged:'status-discharged', Deceased:'status-deceased' }[status] || 'status-inactive');
+
+const rosterRef = ref(db, "roster");
+onValue(rosterRef, snapshot => {
+  const data = snapshot.val() || {};
+  allData = Object.values(data);
+  renderCards();
+});
+
+document.getElementById("searchBox").addEventListener("input", renderCards);
+document.getElementById("statusFilter").addEventListener("change", renderCards);
+document.getElementById("departmentFilter").addEventListener("change", renderCards);
+document.getElementById("authorityFilter").addEventListener("change", renderCards);
+document.getElementById("sortButton").addEventListener("click", () => {
+  if(currentSortMode==='authority'){currentSortMode='alpha';}
+  else if(currentSortMode==='alpha'){currentSortMode='strike';}
+  else{currentSortMode='authority';}
+  document.getElementById("sortButton").textContent='Sort: '+(currentSortMode==='alpha'?'Alphabetical':currentSortMode==='strike'?'Strikepoints':'Authority');
+  renderCards();
+});
+
+function renderCards(){
+  const search=document.getElementById("searchBox").value.toLowerCase();
+  const status=document.getElementById("statusFilter").value;
+  const dept=document.getElementById("departmentFilter").value;
+  const authority=document.getElementById("authorityFilter").value;
+  const container=document.getElementById("cardContainer");
+
+  let filtered=allData.filter(o=>
+    (!search||o.Name.toLowerCase().includes(search)) &&
+    (!status||o.Status===status) &&
+    (!dept||o.Department===dept) &&
+    (!authority||o.Authority===authority)
+  );
+
+  if(currentSortMode==='alpha'){filtered.sort((a,b)=>a.Name.localeCompare(b.Name));}
+  else if(currentSortMode==='strike'){filtered.sort((a,b)=>(parseFloat(b.StrikeCurrent||0)-parseFloat(a.StrikeCurrent||0)));} 
+  else{filtered.sort((a,b)=>(authorityOrder.indexOf(a.Authority)-authorityOrder.indexOf(b.Authority)));}
+
+  container.innerHTML = '';
+  filtered.forEach(o=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML=`
+      <img class="photo" src="${o.Photo||'https://i.imgur.com/6VBx3io.png'}">
+      <div class="info">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div><strong>${o.Name}</strong> (${o.Badge||'-'})</div>
+          <div class="status-tag ${getStatusClass(o.Status)}">${o.Status}</div>
+        </div>
+        <div>Rank: ${o.Rank||''} | <span style="color:${getDepartmentColor(o.Department)}">${o.Department}</span></div>
+        <div>Phone: ${o.Phone||''}</div>
+        <div>Assignment: ${o.Assignment||''}</div>
+        <div>Strike: ${o.StrikeCurrent||0} / ${o.StrikeMax||'TBA'}</div>
+        <div class="authority">${o.Authority||'Unassigned'}</div>
+      </div>`;
+    card.addEventListener('click', ()=>showHoverBox(o));
+    container.appendChild(card);
+  });
+}
+window.hideHoverBox = function() {
+  document.getElementById("hoverBox").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+};
+
+function showHoverBox(o){
+  const hoverBox=document.getElementById("hoverBox");
+  const overlay=document.getElementById("overlay");
+  document.getElementById("hoverPhoto").src=o.Photo||'https://i.imgur.com/6VBx3io.png';
+  const hoverDetails=document.getElementById("hoverDetails");
+  const hoverIcons=document.getElementById("hoverIcons");
+  hoverIcons.innerHTML='';
+  if(o.ServiceBar){hoverIcons.innerHTML+=`<img src="${o.ServiceBar}">`;}
+  if(o.Insignia){hoverIcons.innerHTML+=`<img src="${o.Insignia}">`;}
+  const deptColor=getDepartmentColor(o.Department);
+  hoverBox.style.display="flex"; overlay.style.display="block"; hoverBox.style.borderColor=deptColor; hoverBox.style.boxShadow=`0 0 25px ${deptColor}`;
+  hoverDetails.innerHTML=`
+    <div class="label">Name:</div><div class="value">${o.Name}</div>
+    <div class="label">Badge:</div><div class="value">${o.Badge}</div>
+    <div class="label">Rank:</div><div class="value">${o.Rank}</div>
+    <div class="label">Department:</div><div class="value" style="color:${deptColor};font-weight:bold;">${o.Department}</div>
+    <div class="label">Phone:</div><div class="value">${o.Phone}</div>
+    <div class="label">Assignment:</div><div class="value">${o.Assignment}</div>
+    <div class="label">Strike Points:</div><div class="value">${o.StrikeCurrent||0} / ${o.StrikeMax||'TBA'}</div>
+    <div class="label">Authority:</div><div class="value">${o.Authority}</div>
+    <div class="label">Status:</div><div class="value">${o.Status}</div>`;
+  if(o.ProfileURL){hoverDetails.innerHTML+=`<div style="grid-column:span 2;text-align:center;margin-top:12px;"><a href="${o.ProfileURL}" target="_blank" style="background:${deptColor};padding:8px 14px;border-radius:6px;color:#000;font-weight:bold;">View Profile</a></div>`;}
+}
+
+function hideHoverBox(){
+  document.getElementById("hoverBox").style.display="none";
+  document.getElementById("overlay").style.display="none";
+}
+
+function goHome(){
+  window.history.back();
+}
+
+document.getElementById("overlay").addEventListener("click", hideHoverBox);
+</script>
+</body>
+</html>
