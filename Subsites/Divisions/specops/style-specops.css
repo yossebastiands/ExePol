@@ -10,7 +10,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: #f1f1f1;
-  background: url('Home-BG.jpg') no-repeat center center/cover;
+  background: url('../../../Home-BG.jpg') no-repeat center center/cover;
   min-height: 100vh;
 }
 
@@ -18,14 +18,7 @@ h1, h2, h3, .sidebar-title, header {
   font-family: 'Orbitron', sans-serif;
 }
 
-@media (max-width: 900px) {
-  .sidebar {
-    overflow-y: auto;
-  }
-}
-
-
-/* Background overlay for blur effect */
+/* Overlay background for blur effect */
 .overlay {
   position: fixed;
   top: 0;
@@ -55,9 +48,8 @@ header {
   transition: left 0.3s ease;
 }
 
-/* When sidebar is open, shift header */
 .sidebar.show ~ .main-container header {
-  left: 260px; /* same as sidebar width */
+  left: 260px; /* Matches sidebar width */
 }
 
 .sidebar-toggle {
@@ -78,15 +70,14 @@ header {
   width: 260px;
   position: fixed;
   top: 0;
-  left: -280px; /* Hidden by default */
-  height: 100vh; /* Full viewport height */
+  left: -280px;
+  height: 100vh;
   background: rgba(13, 17, 23, 0.9);
   box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
   padding: 20px;
   transition: left 0.3s ease;
   z-index: 99;
-  overflow: hidden; /* Hide scroll by default */
-  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 .sidebar.show {
@@ -94,9 +85,9 @@ header {
 }
 
 .sidebar:hover {
-  overflow-y: auto; /* Enable scroll only on hover */
+  overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #00ccff transparent; /* Firefox */
+  scrollbar-color: #00ccff transparent;
 }
 
 .sidebar-title {
@@ -108,24 +99,21 @@ header {
   text-shadow: 0 0 10px #00ccff;
 }
 
-/* For Webkit browsers (Chrome, Edge, Safari) */
 .sidebar::-webkit-scrollbar {
   width: 8px;
 }
-
 .sidebar::-webkit-scrollbar-thumb {
   background: #00ccff;
   border-radius: 4px;
 }
-
 .sidebar::-webkit-scrollbar-track {
   background: transparent;
 }
 
+/* Sidebar menu */
 .menu {
   list-style: none;
 }
-
 .menu li {
   margin-bottom: 10px;
 }
@@ -153,37 +141,34 @@ header {
   float: right;
   transition: transform 0.3s ease;
 }
-
 .dropdown-btn.open::after {
   transform: rotate(180deg);
 }
 
-
-.menu a:hover, .dropdown-btn:hover {
+.menu a:hover,
+.dropdown-btn:hover {
   background: rgba(0, 170, 255, 0.25);
   color: #00ffff;
   box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
 }
-
 .menu a.active {
   background: rgba(0, 170, 255, 0.25);
   color: #00ffff;
   font-weight: bold;
   box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
 }
-/* Dropdown content */
+
+/* Dropdown */
 .dropdown-content {
   display: none;
   padding-left: 15px;
 }
-
 .dropdown-content li a {
   font-size: 0.9rem;
   padding: 8px;
   display: block;
   color: #b8d4e3;
 }
-
 .dropdown-content li a:hover {
   color: #00ffff;
 }
@@ -194,7 +179,6 @@ header {
   padding: 100px 20px 20px;
   transition: margin-left 0.3s ease;
 }
-
 .sidebar.show ~ .main-container {
   margin-left: 260px;
 }
@@ -207,7 +191,7 @@ header {
   margin: auto;
 }
 
-/* Left column cards */
+/* Cards for left column */
 .hero-card,
 .nda-card,
 .ooc-card {
@@ -217,19 +201,20 @@ header {
   box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
   margin-bottom: 20px;
 }
-
-
 .hero-card h2 {
   font-size: 1.8rem;
   font-weight: 700;
+  color: #00ccff;
 }
-
-.nda-card h3, .ooc-card h3 {
+.nda-card h3,
+.ooc-card h3 {
   font-size: 1.4rem;
   font-weight: 600;
+  color: #00ccff;
 }
-
-.hero-card p, .nda-card p, .ooc-card p {
+.hero-card p,
+.nda-card p,
+.ooc-card p {
   font-size: 1rem;
   line-height: 1.6;
   max-width: 700px;
@@ -239,12 +224,11 @@ header {
   color: #00ccff;
   text-decoration: underline;
 }
-
 .ooc-card .link:hover {
   color: #00ffff;
 }
 
-/* Right column button panel */
+/* Right column */
 .button-panel {
   background: rgba(255, 255, 255, 0.05);
   padding: 20px;
@@ -252,19 +236,18 @@ header {
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
 }
-
 .button-panel h3 {
   color: #00ccff;
   margin-bottom: 15px;
   text-shadow: 0 0 8px #00ccff;
 }
-
 .button-grid {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Buttons */
 .btn {
   display: block;
   background: rgba(0, 170, 255, 0.1);
@@ -278,7 +261,6 @@ header {
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
-
 .btn:hover {
   background: #00aaff;
   color: #0d1117;
@@ -301,7 +283,6 @@ footer {
   z-index: 100;
 }
 
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .main-grid {
@@ -310,45 +291,4 @@ footer {
   .right-column {
     order: -1;
   }
-}
-
-/* Music Player Styling */
-.music-player {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(13, 17, 23, 0.85);
-  border: 2px solid #00aaff;
-  border-radius: 12px;
-  padding: 10px 15px;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
-  z-index: 200;
-}
-
-#songTitle {
-  color: #00ccff;
-  font-size: 0.9rem;
-  text-shadow: 0 0 6px #00ccff;
-  white-space: nowrap;
-}
-
-.music-player button {
-  background: none;
-  border: none;
-  color: #00ccff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.music-player button:hover {
-  color: #00ffff;
-}
-
-#volumeSlider {
-  width: 100px;
-  accent-color: #00ccff;
 }

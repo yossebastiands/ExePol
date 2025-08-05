@@ -27,32 +27,46 @@
       z-index: -1;
     }
 
-.board-container {
-  max-width: 95%; /* Take most of the page width */
-  width: 95%;
-  margin: 100px auto 20px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
-}
+    .board-container {
+      max-width: 600px;
+      margin: 120px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 170, 255, 0.4);
+      text-align: center;
+    }
 
-.iframe-wrapper {
-  width: 100%;       /* Full width of parent */
-  height: 85vh;      /* Taller frame */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
-}
+    .board-container h1 {
+      color: #00ccff;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00ccff;
+    }
 
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+    .action-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: rgba(0, 170, 255, 0.15);
+      border: 2px solid #00aaff;
+      color: #00ccff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .action-btn:hover {
+      background: #00aaff;
+      color: #0d1117;
+      box-shadow: 0 0 15px #00ccff, 0 0 30px #0099cc;
+      transform: scale(1.05);
+    }
+
     .back-btn {
       display: inline-block;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       padding: 10px 18px;
       background: rgba(0, 170, 255, 0.15);
       border: 2px solid #00aaff;
@@ -63,10 +77,18 @@ iframe {
       transition: 0.3s;
       font-size: 0.95rem;
     }
+
     .back-btn:hover {
       background: #00aaff;
       color: #0d1117;
       box-shadow: 0 0 15px #00ccff, 0 0 30px #0099cc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #a9bcd0;
     }
   </style>
 </head>
@@ -74,9 +96,9 @@ iframe {
   <div class="overlay"></div>
   <div class="board-container">
     <a href="../../index.html" class="back-btn">← Back to Home</a>
-    <div class="iframe-wrapper">
-      <a href="https://script.google.com/macros/s/AKfycbysEC2HRAJRzQIRWa_1fUanKL_WYGC5tKUyfwhyeJ0YL8hP_pt3Je2n8qOVdtQEklB3ZQ/exec" target="_blank" class="btn">Open Registration Form</a>
-    </div>
+    <h1>Officer Registration</h1>
+    <a href="https://script.google.com/macros/s/AKfycbysEC2HRAJRzQIRWa_1fUanKL_WYGC5tKUyfwhyeJ0YL8hP_pt3Je2n8qOVdtQEklB3ZQ/exec" 
+       target="_blank" class="action-btn">Open Registration Form</a>
   </div>
   <footer>
     &copy; 2025 Apollo Flight Program | ExePol Forum

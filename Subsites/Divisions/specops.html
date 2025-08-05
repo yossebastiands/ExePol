@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <title>SpecOps Unit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BASE STYLES (from your reference) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #f1f1f1;
+      background: url('../../Home-BG.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 17, 23, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: -1;
+    }
+
+    /* ===== PAGE CONTENT ===== */
+    .main-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 20px 40px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 2.4rem;
+      color: #00ccff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #00ccff;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #00ccff;
+    }
+
+    .card p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    ul li::before {
+      content: "■";
+      position: absolute;
+      left: 0;
+      color: #00ccff;
+    }
+
+    /* ===== BUTTONS ===== */
+    .button-panel {
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background: rgba(0, 170, 255, 0.1);
+      border: 2px solid #00aaff;
+      color: #00ccff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      background: #00aaff;
+      color: #0d1117;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ccff, 0 0 40px #0099cc;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="main-container">
+    <h1 class="page-title">Welcome to Spec-Ops Unit</h1>
+    <div class="intro">
+      <p><strong>The Special Operations Unit</strong>, known as <strong>SpecOps</strong>, is the elite tactical branch of law enforcement. Operating in the shadows and striking with precision, SpecOps handles missions that exceed the capabilities of standard patrol or detective divisions.</p>
+      <p>Whether it's hostage situations, armed standoffs, high-risk raids, or VIP extractions—SpecOps is called in when failure is not an option.</p>
+    </div>
+
+    <div class="content-grid">
+      <!-- Mission and Responsibilities -->
+      <div class="card">
+        <h2>Mission</h2>
+        <p>SpecOps operates under a doctrine of <strong>precision, control, and minimal collateral</strong>. Each operation is calculated and executed with full coordination across agencies. The unit remains in standby during major emergencies, ready to deploy at a moment's notice.</p>
+
+        <h3>Core Responsibilities</h3>
+        <ul>
+          <li>High-Risk Warrant Execution</li>
+          <li>Hostage Rescue Operations (HRT)</li>
+          <li>Counter-Terror Response</li>
+          <li>Barricaded Suspect Resolution</li>
+          <li>Armed Raid and Breach Support</li>
+          <li>Covert Surveillance & Recon Missions</li>
+          <li>VIP Escort & Threat Mitigation</li>
+        </ul>
+      </div>
+
+      <!-- Officer Requirements -->
+      <div class="card">
+        <h2>Officer Requirements</h2>
+        <p>Only the most disciplined and trusted officers may qualify for SpecOps duty. Members must exhibit calm under pressure, strong tactical reasoning, and unwavering team coordination.</p>
+        <p><strong>Minimum Requirements:</strong></p>
+        <ul>
+          <li>Completion of SpecOps Qualification Course</li>
+          <li>Active duty status with exemplary record</li>
+          <li>Command endorsement</li>
+          <li>Voice comm proficiency during tactical ops</li>
+          <li>Knowledge of rules of engagement and escalation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-panel">
+      <a href="../../index.html" class="btn">Return to Home</a>
+      <a href="specops/specopshub.html" class="btn">Spec-Ops Unit Hub</a>
+    </div>
+  </div>
+</body>
+</html>

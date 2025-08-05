@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpecOps Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style-specops.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .management-panel {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+      width: 90%;
+      max-width: 500px;
+    }
+    .management-panel h2 {
+      color: #00ccff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #00ccff;
+    }
+    .button-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .btn {
+      display: block;
+      background: rgba(0, 170, 255, 0.1);
+      border: 2px solid #00aaff;
+      color: #00ccff;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .btn:hover {
+      background: #00aaff;
+      color: #0d1117;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ccff, 0 0 40px #0099cc;
+    }
+    .return-btn {
+      margin-bottom: 25px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- Return Button -->
+  <a href="specopshub.html" class="btn return-btn">← Back to SpecOps Hub</a>
+
+  <!-- Management Panel -->
+  <div class="management-panel">
+    <h2>SpecOps Management</h2>
+    <div class="button-grid">
+      <a href="#" class="btn">Manage SpecOps Roster</a>
+      <a href="#" class="btn">Mission Planning Dashboard</a>
+      <a href="#" class="btn">SpecOps Vehicle Assignments</a>
+      <a href="#" class="btn">High-Risk Operation Tracker</a>
+      <a href="#" class="btn">Reimburse Request Review</a>
+    </div>
+  </div>
+</body>
+</html>
