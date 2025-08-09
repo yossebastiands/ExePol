@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fleet • Vehicles</title>
+
+  <link rel="stylesheet" href="style-vehicle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <header>
+    <button class="sidebar-toggle" onclick="document.querySelector('.sidebar')?.classList.toggle('show')">☰</button>
+    <span>Fleet • Vehicles</span>
+  </header>
+
+  <div class="main-container">
+    <!-- KPIs -->
+    <section class="summary-row">
+      <div class="kpi">
+        <div class="kpi-label">Total Fleet Count</div>
+        <div id="kpiTotalFleet" class="kpi-value">0</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Impounded</div>
+        <div id="kpiImpounded" class="kpi-value">0</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Available</div>
+        <div id="kpiAvailable" class="kpi-value">0</div>
+      </div>
+    </section>
+
+    <!-- Filters / actions -->
+    <section class="controls">
+      <input id="searchInput" class="input" type="text" placeholder="Search model, plate, owner, department…" />
+      <select id="statusFilter" class="input">
+        <option value="">All Status</option>
+        <option value="Available">Available</option>
+        <option value="Impounded">Impounded</option>
+        <option value="Out of Service">Out of Service</option>
+      </select>
+      <select id="deptFilter" class="input">
+        <option value="">All Departments</option>
+      </select>
+      <button id="refreshBtn" class="btn small">Refresh</button>
+    </section>
+
+    <div class="grid">
+      <!-- Fleet List -->
+      <section class="card">
+        <div class="card-head">
+          <h2>Fleet List</h2>
+          <span id="rowCount" class="muted">0 rows</span>
+        </div>
+
+        <div class="table-wrap">
+          <table id="fleetTable">
+            <thead>
+              <tr>
+                <th data-sort="vehicleModel">Vehicle Model</th>
+                <th data-sort="licensePlate">License Plate</th>
+                <th data-sort="owner">Owner</th>
+                <th data-sort="status">Status</th>
+                <th data-sort="lastRestorationDate">Last Restoration Date</th>
+                <th data-sort="lastRestoredBy">Last Restored By</th>
+                <th data-sort="assignmentCategory">Assignment Category</th>
+                <th>Tags</th>
+                <th data-sort="department">Department</th>
+              </tr>
+            </thead>
+            <tbody id="fleetTbody"></tbody>
+          </table>
+
+          <div id="fleetLoading" class="loading">Loading fleet…</div>
+          <div id="fleetEmpty" class="empty hidden">No vehicles found.</div>
+        </div>
+      </section>
+
+      <!-- Computed Stats -->
+      <section class="card">
+        <div class="card-head">
+          <h2>Fleet Stats</h2>
+          <button id="exportCsv" class="btn small ghost">Export CSV</button>
+        </div>
+
+        <div class="table-wrap">
+          <table id="statsTable">
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Count</th>
+                <th>Available Count</th>
+                <th>Impounded Count</th>
+                <th>Price</th>
+                <th>Extra Part Cost</th>
+                <th>Impound Cost</th>
+              </tr>
+            </thead>
+            <tbody id="statsTbody"></tbody>
+          </table>
+
+          <div id="statsLoading" class="loading">Computing stats…</div>
+          <div id="statsEmpty" class="empty hidden">No stats to display.</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Firebase/page logic -->
+  <script type="module" src="script-vehicle.js"></script>
+</body>
+</html>
