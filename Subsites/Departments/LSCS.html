@@ -1,179 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ExePol | LSCS</title>
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-  <!-- Fonts: Orbitron for headings, Inter for body -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif; /* Main readable font */
-      color: #fff;
-      background: url('../../Home-BG.jpg') no-repeat center center/cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(13, 17, 23, 0.85);
-      backdrop-filter: blur(6px);
-      z-index: -1;
-    }
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <!-- Department page styling (standalone, same as SASPR/LSPD) -->
+  <link rel="stylesheet" href="style-department.css" />
 
-    .dept-container {
-      max-width: 900px;
-      margin: 100px auto;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
-      text-align: center;
-    }
-
-    .dept-container img {
-      width: 120px;
-      margin-bottom: 15px;
-    }
-
-    /* Headings use Orbitron */
-    .dept-container h1,
-    .dept-container h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #00ccff;
-      text-shadow: 0 0 10px #00ccff;
-      margin-bottom: 15px;
-    }
-
-    .dept-container h1 {
-      font-size: 2rem;
-    }
-
-    .dept-container h2 {
-      text-align: left;
-      margin-top: 25px;
-      font-size: 1.4rem;
-      text-shadow: 0 0 8px #00ccff;
-    }
-
-    .dept-container p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 15px;
-      text-align: left;
-      color: #e5eaf0;
-    }
-
-    ul {
-      text-align: left;
-      padding-left: 20px;
-      margin-bottom: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #e5eaf0;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 18px;
-      background: rgba(0, 170, 255, 0.15);
-      border: 2px solid #00aaff;
-      color: #00ccff;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-size: 0.95rem;
-    }
-
-    .back-btn:hover {
-      background: #00aaff;
-      color: #0d1117;
-      box-shadow: 0 0 15px #00ccff, 0 0 30px #0099cc;
-    }
-
-    .contact-btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      background: #00aaff;
-      color: #0d1117;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 20px;
-      transition: 0.3s;
-      font-size: 1rem;
-    }
-
-    .contact-btn:hover {
-      background: #00ccff;
-      box-shadow: 0 0 20px #00ccff, 0 0 40px #0099cc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #a9bcd0;
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="dept-container">
+  <div class="overlay" aria-hidden="true"></div>
+
+  <main class="dept-container">
     <a href="../../index.html" class="back-btn">← Back to Home</a>
-    <img src="../../assets/lscs-logo.png" alt="LSCS Logo">
-    <h1>Los Santos County Sheriff</h1>
-    <p>
-      The Los Santos County Sheriff (LSCS) serves as the primary law enforcement agency for the greater Los Santos County region, including rural areas, small towns, and unincorporated zones beyond city limits. We are dedicated to upholding the law with honor, grit, and rural community presence, ensuring safety across all corners of the county.
-Our deputies face unique challenges—from remote patrols and backroad traffic enforcement to gang interdictions and high-risk warrant executions. Every action reflects our values of discipline, respect, and professionalism.
-Whether you’re assisting stranded civilians, engaging in tactical operations, or managing county jails, you are the backbone of law enforcement across Los Santos County.
-    </p>
-    <p>
-      Whether patrolling city streets, responding to 911 calls, engaging in high-stakes pursuits, or participating in community events, our duty is to serve with integrity, courage, and accountability.
-    </p>
 
-    <h2>What We Offer</h2>
-    <ul>
-      <li>Distinct rank structure and advancement path for deputies</li>
-      <li>Rural and tactical policing with realistic procedures</li>
-      <li>Specialized units: SEB, FAST, HEAT, HSIU,  Mary Unit, Air Unit</li>
-      <li>Hands-on field training and situational drills</li>
-      <li>Opportunities in prison security and fugitive tracking</li>
-    </ul>
+    <header class="dept-header">
+      <h1 class="dept-title">Los Santos County Sheriff</h1>
+      <img class="dept-logo" src="LSSD.png" alt="LSCS Logo" />
+    </header>
 
-    <h2>Requirements</h2>
-    <ul>
-      <li>Must be an active member of the LSCS or approved transfer</li>
-      <li>Strong understanding of chain of command and jurisdiction</li>
-      <li>Willingness to operate in county-specific scenarios</li>
-      <li>Maturity and professionalism in rural law enforcement situations</li>
-    </ul>
+    <section class="dept-intro">
+      <p>
+        The Los Santos County Sheriff (LSCS) serves as the primary law enforcement agency for the greater
+        Los Santos County region, including rural areas, small towns, and unincorporated zones beyond city limits.
+        We are dedicated to upholding the law with honor, grit, and rural community presence, ensuring safety across
+        all corners of the county.
+      </p>
+      <p>
+        Our deputies face unique challenges—from remote patrols and backroad traffic enforcement to gang interdictions
+        and high-risk warrant executions. Every action reflects our values of discipline, respect, and professionalism.
+      </p>
+      <p>
+        Whether you’re assisting stranded civilians, engaging in tactical operations, or managing county jails,
+        you are the backbone of law enforcement across Los Santos County.
+      </p>
+    </section>
 
-    <a href="https://script.google.com/macros/s/AKfycbxcg393PF-7BGRpM-rZwCgJBhAh_ay6Sb2q2OjvSjL15VL_7Vcla510C6G7a0VxnnkdPQ/exec" target="_blank" class="contact-btn">Contact LSCS Management</a>
-  </div>
+    <section class="dept-section">
+      <h2>What We Offer</h2>
+      <ul class="dept-list">
+        <li>Distinct rank structure and advancement path for deputies</li>
+        <li>Rural and tactical policing with realistic procedures</li>
+        <li>Specialized units: SEB, FAST, HEAT, HSIU, Mary Unit, Air Unit</li>
+        <li>Hands-on field training and situational drills</li>
+        <li>Opportunities in prison security and fugitive tracking</li>
+      </ul>
+    </section>
 
-  <footer>
+    <section class="dept-section">
+      <h2>Requirements</h2>
+      <ul class="dept-list">
+        <li>Must be an active member of the LSCS or approved transfer</li>
+        <li>Strong understanding of chain of command and jurisdiction</li>
+        <li>Willingness to operate in county-specific scenarios</li>
+        <li>Maturity and professionalism in rural law enforcement situations</li>
+      </ul>
+
+      <a
+        class="contact-btn"
+        target="_blank"
+        href="https://script.google.com/macros/s/AKfycbxcg393PF-7BGRpM-rZwCgJBhAh_ay6Sb2q2OjvSjL15VL_7Vcla510C6G7a0VxnnkdPQ/exec"
+      >
+        Contact LSCS Management
+      </a>
+    </section>
+  </main>
+
+  <footer class="dept-footer">
     &copy; 2025 Apollo Flight Program | ExePol Forum
   </footer>
 </body>

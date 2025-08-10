@@ -1,0 +1,202 @@
+/* =====================================================
+   ExePol — SASPR Page (standalone)
+   - No dependency on site-wide style.css
+   - Clean, readable, elegant theme
+   - Logo centered beneath title
+   ===================================================== */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --bg-overlay: rgba(10, 14, 20, 0.72);
+
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-2: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --text: #e9eef5;
+  --muted: #a8b6c9;
+
+  --accent: #55c8ff;
+  --accent-2: #2ea7df;
+
+  --radius: 14px;
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Reset ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* ---------- Base ---------- */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  background: url('../../Home-BG.jpg') no-repeat center center / cover fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* ---------- Background Overlay ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+/* =====================================================
+   LAYOUT
+   ===================================================== */
+.dept-container {
+  max-width: 980px;
+  margin: 110px auto 90px;         /* top spacing from window, room above footer */
+  background: var(--panel);
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Header: title + centered logo below it */
+.dept-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.dept-title {
+  color: var(--accent);
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+  text-shadow: 0 0 10px rgba(85, 200, 255, 0.22);
+}
+
+.dept-logo {
+  display: block;
+  width: 130px;
+  height: auto;
+  margin: 6px auto 0;              /* centers the logo under the title */
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+}
+
+/* Content */
+.dept-intro p,
+.dept-container p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.dept-section { margin-top: 22px; }
+
+.dept-section h2 {
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(85, 200, 255, 0.18);
+}
+
+.dept-list {
+  padding-left: 20px;
+  margin: 8px 0 16px;
+  color: var(--text);
+}
+.dept-list li { margin-bottom: 8px; }
+
+.dept-quote {
+  font-style: italic;
+  opacity: 0.95;
+  color: var(--text);
+}
+
+.dept-note {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--accent);
+  border: 1.6px solid var(--accent-2);
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.12s ease,
+              box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.back-btn:hover {
+  background: var(--accent);
+  color: #0d1117;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(85, 200, 255, 0.25);
+  border-color: var(--accent);
+}
+
+.contact-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 18px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #0d1117;
+  background: var(--accent);
+  border: 1.6px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.contact-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(85, 200, 255, 0.25);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.dept-footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+a:focus-visible,
+button:focus-visible,
+.back-btn:focus-visible,
+.contact-btn:focus-visible {
+  outline: 2px solid rgba(85, 200, 255, 0.45);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .dept-title { font-size: 1.6rem; }
+  .dept-logo { width: 110px; }
+  .dept-container { padding: 22px; margin: 96px 12px 90px; }
+}
