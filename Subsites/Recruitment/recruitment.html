@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+
+  <title>ExePol | Recruitment</title>
+
+  <!-- Same global styles & fonts as index -->
+  <link rel="stylesheet" href="style-recruitment.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" aria-label="Officer Hub Navigation">
+    <h2 class="sidebar-title">Recruitment Hub</h2>
+    <ul class="menu">
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Dashboard</button>
+        <ul class="dropdown-content">
+          <li><a href="https://script.google.com/macros/s/AKfycbydYchc4hUeCIP2xk-bdhcHKKeFbLo0QXONrPl4v5NgxwswqvzqWm72DUW2P0SaiksM/exec" target="_blank" class="btn" rel="noopener">Applicant List</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbwX1Tc5BzjAduH90LMbfysL6AMCaQj3LOTYv0sCYcStF7VL8LK0XLBMu-y0bm56g13iCQ/exec" target="_blank" class="btn" rel="noopener">Mentorship Groups</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyJJd1611wzYurrv9vlRbOSUaMDBNa2Q5-dSeEwwTpjFTTNB-2iU08JzhndNKa2OwB5sA/exec" target="_blank" class="btn" rel="noopener">Operation Dashboard</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Departments</button>
+        <ul class="dropdown-content">
+          <li><a href="../Departments/LSPD.html">LSPD</a></li>
+          <li><a href="../Departments/LSCS.html">LSCS</a></li>
+          <li><a href="../Departments/SASPR.html">SASPR</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Services</button>
+        <ul class="dropdown-content">
+          <li><a href="https://script.google.com/macros/s/AKfycbyJJd1611wzYurrv9vlRbOSUaMDBNa2Q5-dSeEwwTpjFTTNB-2iU08JzhndNKa2OwB5sA/exec" target="_blank" class="btn" rel="noopener">Submit A Feedback To Your Mentor</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbxlpRakWyHOxzKn4DrSNggvDsRS399RNf-Nt-klzhDPeq_YhnQpYyNNQoe0ENbVo1Y4Ow/exec" target="_blank" class="btn" rel="noopener">Submit A Feedback To Your Cadet</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn">Forums</button>
+        <ul class="dropdown-content">
+          <li><a href="../Forums/publicboard.html">Tabula Aperta</a></li>
+          <li><a href="../Forums/updatetracker.html">Update Tracker</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../About/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-container">
+    <header>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">&#9776;</button>
+      <h1>LEO Recruitment</h1>
+    </header>
+
+    <main class="main-grid">
+      <!-- LEFT COLUMN -->
+      <section class="left-column">
+        <div class="hero-card">
+          <h2>Join the Force</h2>
+          <p>
+            Become part of Law Enforcement Officer team. We’re looking for disciplined, team-oriented recruits
+            who want to learn real procedures, grow through the Academy, and serve the community with integrity.
+            If you’re ready to patrol, investigate, and uphold the law—start here.
+          </p>
+        </div>
+
+        <div class="nda-card">
+          <h3>Eligibility & Requirements</h3>
+          <p>To keep standards high and roleplay consistent, recruits should:</p>
+          <ul>
+            <li>X</li>
+            <li>X</li>
+            <li>X</li>
+            <li>X</li>
+            <li>X</li>
+          </ul>
+        </div>
+
+        <div class="ooc-card">
+          <h3>Application Process</h3>
+          <p>
+            1) Submit your application → 2) Interview (In Character) → 3) Briefing (OOC in Discord) → 4) Academy Session →
+            5) Probation with Training Officers → 6) Final review & department assignment.
+          </p>
+          <p class="link">
+            Tip: prepare your Discord Username, Steam Hex ID, and (optional) prior LEO experience.
+          </p>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section class="right-column">
+        <div class="button-panel">
+          <h3>Important</h3>
+          <div class="button-grid">
+            <!-- Replace # with your actual recruitment form link -->
+            <a href="https://forms.gle/5BJkPfiNoHdMcX9t5" class="btn" target="_blank" rel="noopener">Apply Now (Recruitment Form)</a>
+            <a href="https://script.google.com/macros/s/AKfycbydYchc4hUeCIP2xk-bdhcHKKeFbLo0QXONrPl4v5NgxwswqvzqWm72DUW2P0SaiksM/exec" target="_blank" class="btn" rel="noopener">Applicant List</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 Apollo Flight Program | ExePol
+    </footer>
+  </div>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <audio id="audioPlayer" src="../../assets/music.mp3"></audio>
+    <span id="songTitle">Now Playing: music</span>
+    <button id="playPauseBtn">▶</button>
+    <button id="resetBtn">⟲</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <!-- Same shared script as index -->
+  <script src="../../script.js"></script>
+</body>
+</html>
